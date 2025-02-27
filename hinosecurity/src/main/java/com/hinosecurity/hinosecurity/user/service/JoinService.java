@@ -8,11 +8,23 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class JoinService {
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    public JoinService(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.userRepository = userRepository;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    }
 
     public void joinProcess(JoinDTO joinDTO) {
+
+        boolean isUser = userRepository.existsByUsername(joinDTO.getUsername());
+
+        if (isUser) {
+            return;
+        }
+
         User user = new User();
 
         user.setUsername(joinDTO.getUsername());
