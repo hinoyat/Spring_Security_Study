@@ -10,7 +10,16 @@ spring:
 
   jpa:
     hibernate:
-#      ddl-auto: update
-      ddl-auto: none
+      ddl-auto: update
+#      ddl-auto: none
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+jwt:
+  secret-key: yourVerySecretKeyHereItShouldBeAtLeast32CharactersLong
+  access-token-validity-in-ms: 3600000
+  refresh-token-validity-in-ms: 2592000000
+  token-prefix: Bearer
+  header-string: Authorization
+

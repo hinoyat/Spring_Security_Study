@@ -1,4 +1,4 @@
-package com.hinosecurity.hinosecurity.global.security;
+package com.hinosecurity.hinosecurity.global.config;
 
 import com.hinosecurity.hinosecurity.global.security.jwt.JwtAuthenticationFilter;
 import com.hinosecurity.hinosecurity.global.security.jwt.JwtTokenProvider;
