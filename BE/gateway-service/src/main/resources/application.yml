@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: gateway-service
+
+  config:
+    import: configserver:http://localhost:8888
+
+  cloud:
+    config:
+      fail-fast: true   # Config 서버 연결 실패시 애플리케이션  시작 중단
